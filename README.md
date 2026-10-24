@@ -11,18 +11,15 @@ This repository contains my Java learning projects and applications.
 
 ## Projects
 
-| Project | Description | Status |
-|---|---|---|
-| `todo-list/` | Initial Java practice project | In progress |
+### Full-Stack Java To-Do List
 
-## Future Plans
+A full-stack To-Do List application built using Java, Spring Boot, React, and MySQL.
 
-I plan to use this repository to organize multiple Java projects in separate folders.
-
-The current learning roadmap includes building a full-stack To-Do List application with Java, Spring Boot, React, and MySQL.
+Project location: `full-stack-todo-list/`
 
 ## Notes
 
-- Java source files (`.java`) are tracked by Git.
-- Compiled Java files (`.class`) are excluded from Git.
-- Maven build output (`target/`) is excluded from Git.
+- Multiple projects will be organized in separate folders.
+- Java source files are tracked by Git.
+- Compiled files and build artifacts are excluded from Git.
+- Environment files containing secrets must not be committed.
