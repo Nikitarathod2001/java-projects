@@ -1,13 +1,25 @@
+
 # Compiled Java files
 *.class
 
 # Maven build output
 target/
 
-# Environment files
+# Node.js dependencies
+node_modules/
+
+# Frontend build output
+dist/
+build/
+
+# Environment files and secrets
 .env
 .env.*
+!.env.example
 
 # IDE files
 .vscode/
 .idea/
+
+# Log files
+*.log
