@@ -1,12 +1,7 @@
 package com.nikita.todobackend.repository;
 
 import com.nikita.todobackend.Task;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TaskRepository {
-
-  List<Task> findAll();
-
-  Task save(Task task);
-  
+public interface TaskRepository extends JpaRepository<Task, Long> {
 }
