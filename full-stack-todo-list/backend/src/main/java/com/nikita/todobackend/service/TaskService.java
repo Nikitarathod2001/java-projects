@@ -23,5 +23,25 @@ public class TaskService {
     task.setId(null);
     return taskRepository.save(task);
   }
+
+  public Task getTaskById(Long id) {
+    return taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+  }
+
+  public Task updateTask(Long id, Task updatedTask) {
+    Task existingTask = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+
+    existingTask.setTitle(updatedTask.getTitle());
+    existingTask.setDescription(updatedTask.getDescription());
+    existingTask.setCompleted(updatedTask.isCompleted());
+
+    return taskRepository.save(existingTask);
+  }
+
+  public void deleteTask(Long id) {
+    Task task = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+
+    taskRepository.delete(task);
+  }
   
 }
