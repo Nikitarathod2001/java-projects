@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-ocean: #083344;
+  --color-ocean-blue: #155E75;
+  --color-sea-blue: #0891B2;
+  --color-aqua: #67E8F9;
+  --color-ice-white: #ECFEFF;
+}
