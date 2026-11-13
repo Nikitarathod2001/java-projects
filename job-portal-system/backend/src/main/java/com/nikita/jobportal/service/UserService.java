@@ -4,6 +4,8 @@ import com.nikita.jobportal.entity.User;
 import com.nikita.jobportal.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -17,8 +19,12 @@ public class UserService {
     if(userRepository.existsByEmail(user.getEmail())) {
       throw new RuntimeException("Email already registered");
     }
-    
+
     return userRepository.save(user);
+  }
+
+  public List<User> getAllUsers() {
+    return userRepository.findAll();
   }
   
 }
