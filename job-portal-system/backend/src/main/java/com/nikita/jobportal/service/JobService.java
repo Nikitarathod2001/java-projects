@@ -25,5 +25,19 @@ public class JobService {
   public Job getJobById(Long id) {
     return jobRepository.findById(id).orElseThrow(() -> new RuntimeException("Job not found."));
   }
+
+  public Job updateJob(Long id, Job updatedJob) {
+    Job existingJob = jobRepository.findById(id).orElseThrow(() -> new RuntimeException("Job not found"));
+
+    existingJob.setTitle(updatedJob.getTitle());
+    existingJob.setDescription(updatedJob.getDescription());
+    existingJob.setCompanyName(updatedJob.getCompanyName());
+    existingJob.setLocation(updatedJob.setLocation());
+    existingJob.setSalary(updatedJob.getSalary());
+    existingJob.setJobType(updatedJob.getJobType());
+    existingJob.setExperienceLevel(updatedJob.getExperienceLevel());
+
+    return jobRepository.save(existingJob);
+  }
   
 }
