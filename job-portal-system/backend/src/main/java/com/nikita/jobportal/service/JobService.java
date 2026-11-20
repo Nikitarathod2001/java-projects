@@ -3,6 +3,7 @@ package com.nikita.jobportal.service;
 import com.nikita.jobportal.repository.JobRepository;
 import org.springframework.stereotype.Service;
 import com.nikita.jobportal.entity.Job;
+import java.util.List;
 
 @Service
 public class JobService {
@@ -15,6 +16,14 @@ public class JobService {
 
   public Job createJob(Job job) {
     return jobRepository.save(job);
+  }
+
+  public List<Job> getAllJobs() {
+    return jobRepository.findAll();
+  }
+
+  public Job getJobById(Long id) {
+    return jobRepository.findById(id).orElseThrow(() -> new RuntimeException("Job not found."));
   }
   
 }
